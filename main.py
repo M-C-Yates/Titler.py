@@ -12,6 +12,7 @@ parser.add_argument("-d", default='\u0020',
 parser.add_argument(
     '-a', default=1, help="amount of names to generate. default: 1", required=False, type=int)
 
+
 args = parser.parse_args()
 
 with open('words.json', 'r') as inFile:
@@ -22,4 +23,4 @@ amount = args.a
 for x in range(1, amount + 1):
     randAdjective = random.choice(words["adjectives"])
     randNoun = random.choice(words["nouns"])
-    print(f"{randAdjective}{delimiter}{randNoun} {x}")
+    print(f"{randAdjective}{delimiter}{randNoun}")
