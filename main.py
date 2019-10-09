@@ -1,9 +1,12 @@
-import json
 import argparse
-
+import json
+import random
 
 with open('words.json', 'r') as inFile:
-    wordsDict = json.load(inFile)
+    words = json.load(inFile)
 
-# for adjective in wordsDict["adjectives"]:
-#     print(adjective)
+randAdjective = random.choice(words["adjectives"])
+randNoun = random.choice(words["nouns"])
+delimiter = " "
+
+print(f"{randAdjective}{delimiter}{randNoun}")
